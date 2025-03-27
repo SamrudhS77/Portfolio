@@ -82,7 +82,7 @@ const Contact = () => (
 
 const App = () => {
   return (
-    <div>
+    <div className="page-wrapper">
       <Home />
       <Projects />
       <Contact />
