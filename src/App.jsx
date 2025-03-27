@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
@@ -124,10 +124,25 @@ const Contact = () => (
   </motion.section>
 );
 
+
 const App = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.8) {
+        document.body.classList.add("scrolled");
+      } else {
+        document.body.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="page-wrapper">
       <NavBar />
+      <div className="background-grid"></div>
       <Home />
       <Projects />
       <Contact />
