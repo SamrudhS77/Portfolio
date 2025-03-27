@@ -4,6 +4,7 @@ import { useInView } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter';
 import "./index.css";
+import NavBar from "./NavBar";
 
 const Home = () => (
   <section className="home">
@@ -107,6 +108,7 @@ const Projects = () => (
 
 const Contact = () => (
     <motion.section
+      id="contact"
       className="contact"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -125,6 +127,7 @@ const Contact = () => (
 const App = () => {
   return (
     <div className="page-wrapper">
+      <NavBar />
       <Home />
       <Projects />
       <Contact />
