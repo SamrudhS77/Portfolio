@@ -45,32 +45,24 @@ const projects = [
 const Projects = () => (
   <section id="projects" className="projects">
     <h2 className="projects-title">My Projects</h2>
-    <div className="projects-list">
+    <div className="projects-grid">
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className="project-tile"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
+          className="project-card"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
         >
-          <div className="project-preview">
-            <iframe
-              src={project.embedUrl}
-              className="project-iframe"
-              title={project.title}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="project-content">
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <p className="project-tech">Tech Used: {project.tech}</p>
-          </div>
+          <h3 className="project-title">{project.title}</h3>
+          <p className="project-description">{project.description}</p>
+          <p className="project-tech">Tech: {project.tech}</p>
+          <iframe
+            src={project.embedUrl}
+            width="100%"
+            height="300px"
+            className="project-iframe"
+          ></iframe>
         </motion.div>
       ))}
     </div>
