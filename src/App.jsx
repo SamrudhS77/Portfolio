@@ -1,15 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { Typewriter } from 'react-simple-typewriter';
 import "./index.css";
 
 const Home = () => (
   <section className="home">
-    <motion.h1 className="home-title" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-      Hi, I'm [Your Name]
-    </motion.h1>
+    <div className="home-glow-container">
+      <motion.h1
+        className="home-title"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Hi, I'm Samrudh Shetty
+      </motion.h1>
+    </div>
     <motion.p className="home-subtitle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}>
-      Data Scientist | Machine Learning | Analytics | Interactive Dashboards
+      I’m a{' '}
+      <span style={{ color: '#00bfa6', fontWeight: 'bold' }}>
+        <Typewriter
+          words={['Data Scientist', 'ML Engineer', 'Dashboard Designer', 'Storyteller']}
+          loop={true}
+          cursor
+          cursorStyle='|'
+          typeSpeed={80}
+          deleteSpeed={40}
+          delaySpeed={1500}
+        />
+      </span>
     </motion.p>
     <motion.a
       href="#projects"
