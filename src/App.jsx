@@ -6,6 +6,7 @@ import "./index.css";
 
 const Home = () => (
   <section className="home">
+    <div className="home-abstract-shape"></div>
     <div className="home-glow-container">
       <motion.h1
         className="home-title"
@@ -30,13 +31,19 @@ const Home = () => (
         />
       </span>
     </motion.p>
-    <motion.a
-      href="#projects"
-      className="home-button"
-      whileHover={{ scale: 1.1 }}
-    >
-      Explore My Work
-    </motion.a>
+    <div className="cta-buttons">
+      <a href="#projects" className="home-button">
+        ↓ See My Work
+      </a>
+      <a
+        href="/SamrudhShetty_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="resume-button"
+      >
+        📄 View Resume
+      </a>
+    </div>
   </section>
 );
 
