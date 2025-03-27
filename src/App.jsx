@@ -7,7 +7,7 @@ import "./index.css";
 import NavBar from "./NavBar";
 
 const Home = () => (
-  <section className="home">
+  <section id="home" className="home">
     <div className="home-abstract-shape"></div>
     <div className="home-glow-container">
       <motion.h1
@@ -23,7 +23,7 @@ const Home = () => (
       I’m a{' '}
       <span style={{ color: '#00bfa6', fontWeight: 'bold' }}>
         <Typewriter
-          words={['Data Scientist', 'ML Engineer', 'Dashboard Designer', 'Storyteller']}
+          words={['Data Scientist', 'ML Engineer', 'Analytical Thinker', 'Storyteller']}
           loop={true}
           cursor
           cursorStyle='|'
