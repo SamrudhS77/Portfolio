@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter';
 import "./index.css";
@@ -14,7 +15,7 @@ const Home = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Hi, I'm Samrudh Shetty
+        Hi, I'm Samrudh
       </motion.h1>
     </div>
     <motion.p className="home-subtitle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}>
@@ -69,7 +70,14 @@ const projects = [
 ];
 
 const Projects = () => (
-  <section id="projects" className="projects">
+  <motion.section
+    id="projects"
+    className="projects"
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
     <h2 className="projects-title">My Projects</h2>
     <div className="projects-grid">
       {projects.map((project, index) => (
@@ -77,8 +85,9 @@ const Projects = () => (
           key={index}
           className="project-card"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h3 className="project-title">{project.title}</h3>
           <p className="project-description">{project.description}</p>
@@ -92,18 +101,25 @@ const Projects = () => (
         </motion.div>
       ))}
     </div>
-  </section>
+  </motion.section>
 );
 
+
 const Contact = () => (
-  <section className="contact">
+    <motion.section
+      className="contact"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
     <h2 className="contact-title">Let's Connect</h2>
     <div className="contact-icons">
       <a href="mailto:samrudhshetty6@gmail.com" className="contact-icon"><FaEnvelope /></a>
       <a href="https://www.linkedin.com/in/samrudhshetty/" className="contact-icon"><FaLinkedin /></a>
       <a href="https://github.com/SamrudhS77" className="contact-icon"><FaGithub /></a>
     </div>
-  </section>
+  </motion.section>
 );
 
 const App = () => {
